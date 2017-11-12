@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="compApp">
+
+<head>
+<script src="company/angular.js"></script>
+<script src="company/angular-ui-router.js"></script>
+<script src="company/bootstrap.js"></script>
+<script src="company/route.config.js"></script>
+<script src="company/CreateCoupon.ctrl.js"></script>
+<script src="company/GetCoupons.ctrl.js"></script>
+<script src="company/errorlogServ.js"></script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="company/materialize.min.js"></script>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection" />
+<script$(".button-collapse").sideNav();></script>
+<style>
+a.page-title {
+	font-size: 40px
+}
+
+body {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	body {
+		padding-left: 0;
+	}
+}
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav class="top-nav">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a class="page-title">Welcome</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container"></div>
+	</header>
+	<!-- Sidebar -->
+	<ul id="slide-out" class="side-nav fixed">
+		<li><div class="user-view">
+				<div class="background">
+					<img src="images/office.jpg">
+				</div>
+				<a><img class="circle" src="images/admin.jpg"></a> <a><span
+					class="white-text name">Company</span></a>
+			</div></li>
+		<li><a class="subheader">Company</a></li>
+		<li><a href="#/getcoupons">Coupons</a></li>
+		<li><a href="#/createcoupon">Create Coupon</a></li>
+	</ul>
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<div ui-view></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+
+<head>
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/adminServ.js"></script>
+<script src="js/errorlogServ.js"></script>
+<script src="js/route.config.js"></script>
+<script src="js/CreateCompany.ctrl.js"></script>
+<script src="js/GetCompanies.ctrl.js"></script>
+<script src="js/CreateCustomer.ctrl.js"></script>
+<script src="js/GetCustomers.ctrl.js"></script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+<script$(".button-collapse").sideNav();></script>
+<style>
+a.page-title {
+	font-size: 40px;
+}
+
+body {
+	padding-left: 300px;
+}
+
+.container{
+    width: 98%;
+}
+@media only screen and (max-width : 992px) {
+	body {
+		padding-left: 0;
+	}
+}
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav class="top-nav">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a class="page-title">Welcome</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container"></div>
+	</header>
+	<!-- Sidebar -->
+	<ul id="slide-out" class="side-nav fixed">
+		<li><div class="user-view">
+				<div class="background">
+					<img src="images/office.jpg">
+				</div>
+				<a><img class="circle" src="images/admin.jpg"></a> <a><span
+					class="white-text name">Administrator</span></a>
+			</div></li>
+		<li><a href="#/get">Companies</a></li>
+		<li><a href="#/create">Create Company</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect" href="#/getcust">Customers</a></li>
+		<li><a class="waves-effect" href="#/createcust">Create Customer</a></li>
+		<li><a class="waves-effect" href="#/logout">Logout</a></li>
+		
+		
+	</ul>
+
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<div ui-view></div>
+		</div>
+	</div>
+
+</body>
+</html>

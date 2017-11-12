@@ -1,0 +1,43 @@
+﻿<!--  Tables Section-->
+
+<div id="tables" class="section scrollspy">
+	<h2 class="header">Companies</h2>
+	 <p ng-show="logError.error" style="color:red">{{result.msg}}</p>
+	<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="Search Company"
+				ng-model="searchComp">
+		</div>
+	</div>
+</form>
+	<div class="row">
+		<div class="col s12">
+			<div ng-controller="GetCompaniesCtrl as companyTable">
+				<table class="bordered" class="responsive-table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>NAME</th>
+							<th>Password</th>
+							<th>Action</th>
+						</tr>
+					<tbody>
+						<tr ng-repeat="c in g.companies| filter:searchComp">
+							<td>{{c.compId}}</td>
+							<td>{{c.compName}}</td>
+							<td>{{c.password}}</td>
+							<td> <button class="waves-effect waves-light btn" ng-click="companyTable.deleteCompany(c.compName)">Delete</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+           
+           

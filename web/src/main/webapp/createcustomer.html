@@ -1,0 +1,23 @@
+﻿
+     <div class="row">
+        <form class="col s12">
+         <div class="row">
+       <div class="input-field col s12">
+          <input id="custName" type="text" class="validate" ng-model="c.newCustomer.custName">
+          <label for="custNae">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate"ng-model="c.newCustomer.password">
+          <label for="password">Password</label>
+        </div>
+        </div>
+    </form>
+  </div>
+
+<input class="waves-effect waves-light btn" type="button" value="Create" ng-click="c.createCustomer()" />
+<br>
+<br>
+
+    <p ng-show="c.success" style="color:green">Customer Successfully created!</p>
+    <p ng-show="c.failure" style="color:red">Customer was NOT created!</p>
+    <p ng-show="c.logError.error" style="color:red">{{c.logError.msg}}</p>

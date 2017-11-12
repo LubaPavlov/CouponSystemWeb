@@ -1,0 +1,26 @@
+﻿
+<div class="row">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="title" type="text" ng-model="c.newCoupon.coupTitle">
+				<label for="coupTitle">Title</label>
+			</div>
+			<div class="input-field col s12">
+				<input id="amount" type="number" ng-model="c.newCoupon.coupAmount">
+				<label for="coupAmount">Amount</label>
+			</div>
+			<div class="input-field col s12">
+				<input id="price" type="number" ng-model="c.newCoupon.coupPrice">
+				<label for="coupPrice">Price</label>
+			</div>
+					<div class="input-field col s12">
+				<input id="type" type="number" ng-model="c.newCoupon.coupType">
+				<label for="coupType">Type</label>
+			</div>
+	</form>
+</div>
+<input class="waves-effect waves-light btn" type="button" value="Create"
+	ng-click="c.createCoupon()" />
+<br>
+<br>

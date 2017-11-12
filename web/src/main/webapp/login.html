@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+ <script 
+  $(document).ready(function() {
+    $('select').material_select();
+  }); ></script>
+  
+</head>
+<body>
+	<div class="container">
+		<div class = "main">
+			<h2 class="header ">Coupons System</h2>
+			<form id="form_id" action="http://localhost:8080/web/login"
+				method="POST" name="loginForm">
+				<label for="name">Name</label><input id="name" name="name"
+					type="text"> <label for="password">Password</label><input
+					id="password" name="password" type="password">
+				<p>
+					<input class="with-gap" name="type" type="radio" id="ADMIN"
+						value="ADMIN" checked /> <label for="ADMIN">Admin</label>
+				</p>
+				<p>
+					<input class="with-gap" name="type" type="radio" id="COMPANY"
+						value="COMPANY" /> <label for="COMPANY">Company</label>
+				</p>
+				<p>
+					<input class="with-gap" name="type" type="radio" id="CUSTOMER"
+						value="CUSTOMER" /> <label for="CUSTOMER">Customer</label>
+				</p>
+				<button class="btn waves-effect waves-light" type="submit"
+					name="action">
+					Send<i class="material-icons right">send</i>
+				</button>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>

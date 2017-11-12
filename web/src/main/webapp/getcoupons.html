@@ -1,0 +1,54 @@
+﻿<!--  Tables Section-->
+
+<div id="tables" class="section scrollspy">
+	<h2 class="header">Coupons</h2>
+	 <p ng-show="logError.error" style="color:red">{{result.msg}}</p>
+	<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="Search Coupon"
+				ng-model="searchCoup">
+		</div>
+	</div>
+</form>
+	<div class="row">
+		<div class="col s12">
+			<div ng-controller="GetCouponsCtrl as couponTable">
+				<table class="bordered" class="responsive-table">
+					<thead>
+						<tr>
+						    <th>Id</th>
+							<th>Title</th>
+							<th>StartDate</th>
+							<th>EndDate</th>
+							<th>amount</th>
+							<th>type</th>
+							<th>message</th>
+							<th>price</th>
+							<th>image</th>
+						</tr>
+					<tbody>
+						<tr ng-repeat="c in g.coupons| filter:searchCoup">
+							<td>{{c.couponId}}</td>
+							<td>{{c.title}}</td>
+							<td>{{c.startDate}}</td>
+							<td>{{c.endDate}}</td>
+							<td>{{c.amount}}</td>
+							<td>{{c.type}}</td>
+							<td>{{c.message}}</td>
+							<td>{{c.price}}</td>
+							<td>{{c.image}}</td>
+							<td> <button class="waves-effect waves-light btn" ng-click="couponTable.deleteCoupon(c.couponId)">Delete</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+           
+           

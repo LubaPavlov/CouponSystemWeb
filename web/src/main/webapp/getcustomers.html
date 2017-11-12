@@ -1,0 +1,43 @@
+﻿<!--  Tables Section-->
+
+<div id="tables" class="section scrollspy">
+	<h2 class="header">Customers</h2>
+	 <p ng-show="logError.error" style="color:red">{{result.msg}}</p>
+	<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="Search Customer"
+				ng-model="searchCust">
+		</div>
+	</div>
+</form>
+	<div class="row">
+		<div class="col s12">
+			<div ng-controller="GetCustomersCtrl as customerTable">
+				<table class="bordered" class="responsive-table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>NAME</th>
+							<th>Password</th>
+							<th>Action</th>
+						</tr>
+					<tbody>
+						<tr ng-repeat="c in g.customers| filter:searchCust">
+							<td>{{c.custId}}</td>
+							<td>{{c.custName}}</td>
+							<td>{{c.password}}</td>
+							<td> <button class="waves-effect waves-light btn" ng-click="customerTable.deleteCustomer(c.custName)">Delete</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>     
+
+<p ng-show="customerTable.success" style="color:green">Customer Successfully deleted!</p>
+           

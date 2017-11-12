@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<h2 class="header ">Welcome</h2>
+	<div>
+		<p class="greeting-content">
+			Coupons <br>
+		</p>
+		<button name="allcoupons" onClick="(getAllCoupons())">Get All Coupons</button>
+	</div>
+	<script>
+		function getAllCoupons() {
+			$.ajax({
+				url : "http://localhost:8080/web/webapi/company/getcoupons"
+			})
+				.then(
+					function(data) {
+						for (var i = 0; i < data.length; i++) {
+							$('.greeting-content').append(
+								'<b> Id = ' + data[i]["couponId"]
+								+ ' Coupon Title = '
+								+ data[i]["title"]
+								+ ' startDate = '
+								+ data[i]["startDate"]
+								+ ' endDate = '
+								+ data[i]["endDate"]
+								+ ' amount = '
+								+ data[i]["amount"]
+								+ ' type = '
+								+ data[i]["type"]
+								+ ' message = '
+								+ data[i]["message"]
+								+ ' price = '
+								+ data[i]["price"]
+								+ ' image = '
+								+ data[i]["image"]
+								+ '</b><br>');
+						}
+					});
+		}
+	</script>
+</head>
+</html>

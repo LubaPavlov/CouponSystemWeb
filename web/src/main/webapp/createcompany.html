@@ -1,0 +1,33 @@
+﻿
+     <div class="row">
+        <form class="col s12">
+         <div class="row">
+       <div class="input-field col s12">
+          <input id="compName" type="text" class="validate" ng-model="c.newCompany.compName">
+          <label for="compNae">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate"ng-model="c.newCompany.password">
+          <label for="password">Password</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate"ng-model="c.newCompany.email">
+          <label for="email">Email</label>
+        </div>
+        </div>
+    </form>
+  </div>
+<!-- <p> -->
+<!-- 	<input type="text" placeholder="Name" ng-model="c.newCompany.compName"> 		 -->
+<!-- 	<input type="email" placeholder="Email" ng-model="c.newCompany.email"> -->
+<!-- 	<input type="text" placeholder="Password" ng-model="c.newCompany.password"> -->
+<!-- </p> -->
+
+<input class="waves-effect waves-light btn" type="button" value="Create" ng-click="c.createCompany()" />
+<br>
+<br>
+
+    <p ng-show="c.success" style="color:green">Company Successfully created!</p>
+    <p ng-show="c.failure" style="color:red">Company was NOT created!</p>
+    <p ng-show="c.logError.error" style="color:red">{{c.logError.msg}}</p>
